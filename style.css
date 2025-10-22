@@ -1,0 +1,311 @@
+/* * 1. Global Reset & Smooth Scroll 
+ * Use a dark background and a contrasting accent color 
+ */
+:root {
+    --bg-color: #121212; /* Dark background */
+    --text-color: #f0f0f0; /* Light text */
+    --accent-color: #00bcd4; /* Bright Blue/Cyan accent (similar to the example) */
+    --secondary-bg: #1e1e1e; /* Slightly lighter background for cards/sections */
+    --border-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* KEY to the smooth scrolling effect */
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.section {
+    padding: 100px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-bottom: 20px;
+}
+
+/* * 2. Navigation Bar (Header) 
+ */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    color: var(--accent-color);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 25px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+.cv-button {
+    background-color: var(--accent-color);
+    color: var(--bg-color) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.cv-button:hover {
+    opacity: 0.8;
+}
+
+/* * 3. Hero Section (Intro)
+ * Uses Flexbox for two-column layout
+ */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    color: var(--accent-color);
+}
+
+.roles {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Circular image */
+    border: 5px solid var(--accent-color);
+    box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+.primary-button:hover {
+    background-color: #0097a7;
+}
+
+.secondary-button {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    background: none;
+}
+.secondary-button:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* * 4. About & Skills Layouts 
+ */
+.about-grid, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.tech-icons i {
+    font-size: 2.5em;
+    margin: 10px;
+    color: var(--accent-color);
+    transition: transform 0.3s;
+}
+.tech-icons i:hover {
+    transform: scale(1.1);
+}
+
+.stats div {
+    background-color: var(--secondary-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.stats span {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* * 5. Projects Grid 
+ */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--secondary-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+/* * 6. Contact Form 
+ */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.contact-details a {
+    color: var(--accent-color);
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    color: #666;
+}
+
+/* * 7. Responsiveness 
+ */
+@media (max-width: 768px) {
+    .navbar nav {
+        display: none; /* Simple hiding for mobile menu */
+    }
+    .hero-section {
+        flex-direction: column-reverse; /* Stack image on top of text */
+        text-align: center;
+    }
+    .hero-image {
+        margin-bottom: 40px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .button {
+        margin-right: 0;
+    }
+    .about-grid, .projects-grid, .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-section {
+        flex-direction: column;
+    }
+}
