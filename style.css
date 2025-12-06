@@ -80,7 +80,7 @@ h2 {
 .cv-button {
     background-color: var(--accent-color);
     color: var(--bg-color) !important;
-    padding: 8px 15px;
+    padding: 12px 25px;
     border-radius: 5px;
     font-weight: bold;
 }
@@ -308,4 +308,5 @@ footer {
     .contact-section {
         flex-direction: column;
     }
+
 }
